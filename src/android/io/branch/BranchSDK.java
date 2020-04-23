@@ -20,7 +20,6 @@ import java.util.Iterator;
 
 import io.branch.indexing.BranchUniversalObject;
 import io.branch.referral.Branch;
-import io.branch.referral.BranchUtil;
 import io.branch.referral.PrefHelper;
 import io.branch.referral.BranchError;
 import io.branch.referral.BranchViewHandler;
@@ -72,8 +71,7 @@ public class BranchSDK extends CordovaPlugin {
 
         this.activity = this.cordova.getActivity();
         Branch.disableInstantDeepLinking(true);
-        BranchUtil.setPluginType(BranchUtil.PluginType.CordovaIonic);
-        BranchUtil.setPluginVersion(BRANCH_PLUGIN_VERSION);
+        Branch.registerPlugin("CordovaIonic", BRANCH_PLUGIN_VERSION);
         if (this.instance == null) {
             this.instance = Branch.getAutoInstance(this.activity.getApplicationContext());
         }
