@@ -81,13 +81,10 @@ SOFTWARE.
       <source-file src="src/ios/BranchSDK.m" />
       <source-file src="src/ios/AppDelegate+BranchSdk.m" />
 
-      <podspec>
-          <config>
-              <source url="https://github.com/CocoaPods/Specs.git"/>
-          </config>
-          <pods>
-              <pod name="Branch" spec="~> 0.31.3" />
-          </pods>
-      </podspec>
+      <pods-config ios-min-version="9.0" use-frameworks="true">
+        <source url="https://github.com/CocoaPods/Specs.git" />
+        <source url="https://github.com/goinstant/pods-specs-public" />
+      </pods-config>
+      <pod name="Branch" spec="~> 0.31.3" />
   </platform>
 </plugin>
